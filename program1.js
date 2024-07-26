@@ -56,8 +56,6 @@ const grid2 = [
 console.log(numIslands(grid1)); // Output: 1
 console.log(numIslands(grid2)); // Output: 3
 
-  // write your code here
-
 };
 
 module.exports = getTotalIsles;
