@@ -1,5 +1,4 @@
 const getTotalIsles = function (grid) {
-
   function numIslands(grid) {
     if (!grid || grid.length === 0) {
         return 0;
@@ -14,10 +13,8 @@ const getTotalIsles = function (grid) {
             return;
         }
 
-        // Mark the current cell as water ('W') to avoid reprocessing
         grid[row][col] = 'W';
         
-        // Explore all 4 possible directions (up, down, left, right)
         dfs(row + 1, col);
         dfs(row - 1, col);
         dfs(row, col + 1);
@@ -36,7 +33,10 @@ const getTotalIsles = function (grid) {
     }
 
     return numIslands;
-}
+  }
+
+  return numIslands(grid);
+};
 
 // Example usage
 const grid1 = [
@@ -53,9 +53,7 @@ const grid2 = [
     ["W", "W", "W", "L", "L"],
 ];
 
-console.log(numIslands(grid1)); // Output: 1
-console.log(numIslands(grid2)); // Output: 3  
-
-};
+console.log(getTotalIsles(grid1)); // Output: 1
+console.log(getTotalIsles(grid2)); // Output: 3  
 
 module.exports = getTotalIsles;
